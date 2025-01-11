@@ -1,6 +1,6 @@
 ---
 import Footer from '../components/Footer.astro'
-// import Header from '../components/Header.astro'
+import Header from '../components/Header.astro'
 ---
 
 <!doctype html>
@@ -20,9 +20,9 @@ import Footer from '../components/Footer.astro'
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	</head>
 
-	<body class="w-screen h-screen overflow-hidden bg-gradient-to-r from-stone-800 to-slate-800">
+	<body class="w-screen h-screen overflow-hidden bg-gradient-to-r from-slate-800 to-stone-800">
 		<main class="w-full sm:w-[640px] h-full mx-auto flex flex-col justify-between bg-gradient-to-b from-slate-50 to-slate-200 overflow-y-scroll">
-			<!-- <Header /> -->
+			<Header />
 			<section class="px-3">
 				<slot />
 			</section>
@@ -30,3 +30,19 @@ import Footer from '../components/Footer.astro'
 		</main>
 	</body>
 </html>
+
+<style>
+	/* global window */
+	main::-webkit-scrollbar {
+		/* display: none; */
+		width: 4px;
+		height: 8px;
+		background-color: #1a2435; /* or add it to the track */
+	}
+	main::-webkit-scrollbar-thumb {
+		background: #1c59c4;
+	}
+	body {
+		overflow-x: hidden; /* hide horizontal scrollbar */
+	}
+</style>
